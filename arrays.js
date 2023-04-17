@@ -51,33 +51,30 @@ for(let i=0; i<arr2.length;i++){
     sum2 += arr2[i];
 }
 console.log(sum2);
-//table format
 
+//table format
  function sumTable(table, index) {
     let sum = 0;
     for (let i = 0; i < table.length; i++) {
       if (index >= 0 && index < table[i].length) {
         sum += table[i][index];
       }
-    
       else if (index < 0 && -index < table.length) {
         sum += table[table.length + index][i];
       }
     }
     return sum;
   }
-
-  const table = [
+ const table = [
     [1, 2, 3],
     [4, 5, 6],
     [7, 8, 9],
   ];
+const sumCol1 = sumTable(table, 0);
+const sumRow2 = sumTable(table, -1); 
 
-  const sumCol1 = sumTable(table, 0);
-  const sumRow2 = sumTable(table, -1); 
-
-  console.log(sumCol1);
-  console.log(sumRow2);
+console.log(sumCol1);
+console.log(sumRow2);
 
   //5.reversed elements
   function reversed(arr) {
@@ -90,3 +87,17 @@ console.log(sum2);
   let myArray =["food",12,"eat","cold",54];
   let reversedArray = reversed(myArray);
   console.log(reversedArray);
+
+  //sort arrays from lowest to largest
+  function sortedArrays(arr) {
+    arr.sort(function(a,b){
+      return a-b;
+    });
+    return arr; 
+  }
+   let v = [12,3,54,67,98,0,21];
+   console.log(sortedArrays(v));
+   let w = [-5,-2,-10,-1,-8,-100,-34];
+   console.log(sortedArrays(w));
+   let x = [1.5,6.2,6.5,0.1,8.4,9.0,];
+   console.log(sortedArrays(x));
