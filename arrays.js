@@ -88,7 +88,7 @@ console.log(sumRow2);
   let reversedArray = reversed(myArray);
   console.log(reversedArray);
 
-  //sort arrays from lowest to largest
+  //6. sort arrays from lowest to largest
   function sortedArrays(arr) {
     arr.sort(function(a,b){
       return a-b;
@@ -101,3 +101,56 @@ console.log(sumRow2);
    console.log(sortedArrays(w));
    let x = [1.5,6.2,6.5,0.1,8.4,9.0,];
    console.log(sortedArrays(x));
+
+   //7. Create a function that filters out negative numbers
+   function getNewNums(array) {
+      return array.filter(num => num > 1);
+    
+   }
+   let nums = [12,-3,5,-9.2,54,67,-22,40,15];
+   const positiveNums = nums.filter(num=> num > 0);
+   console.log(positiveNums);
+   // to filter positive numbers
+   function filterPositiveNums(arr) {
+      return arr.filter(num => num > 1);
+    
+   }
+   let number = [12,-3,5,-9.2,54,67,-22,40,15];
+   const negativeNums = nums.filter(num=> num < 0);
+   console.log(negativeNums);
+
+   //8. Remove the spaces found in a string
+   function sentence(string) {
+  return string.replace(/\s+(?!\s)/g, ' '); // learnt about (?!\s) is a negative look ahead
+                                            //match must not follow a specific pattern
+}
+
+let words = " i  am  very   proud to be in a     Tech   school . ";
+const cleanSentence = sentence(words);
+console.log(cleanSentence); 
+
+//9. Return a Boolean if a number is divisible by 10
+function divisibleBy10(num) {
+  return num % 10 ===0;
+}
+console.log(divisibleBy10(20));
+console.log(divisibleBy10(51));
+console.log(divisibleBy10(100));
+console.log(divisibleBy10(3));
+
+// 10. Return the number of vowels in a string
+function getCount(str) {
+  let vowelsCount = 0;
+  const vowels = ["a","e","i","o","u"];
+  for(let char of str){
+    if(vowels.includes(char)){
+      vowelsCount++
+    }
+  }
+  return vowelsCount
+  
+}
+console.log(getCount("virginia"));
+console.log(getCount("fly"));
+
+
